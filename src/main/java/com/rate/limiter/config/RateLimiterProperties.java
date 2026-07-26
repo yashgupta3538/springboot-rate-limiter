@@ -1,4 +1,4 @@
-package com.example.rate.config;
+package com.rate.limiter.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -14,5 +14,21 @@ public class RateLimiterProperties {
     private String apiServerUrl = "http://localhost:8080";
 
     private int timeOut = 5000;
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public long getRefillRate() {
+        return refillRate;
+    }
+
+    public String getApiServerUrl() {
+        return apiServerUrl;
+    }
+
+    public int getTimeOut() {
+        return timeOut;
+    }
 
 }
